@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – Netra Plus</title>
+    <meta name="description" content="How Netra Plus, the accessibility app for blind and visually impaired people, uses and protects your information.">
+    <meta name="color-scheme" content="dark light">
+
+    <style>
+        :root {
+            --bg: #0b0b0b;
+            --surface: #161616;
+            --text: #ededed;
+            --muted: #b8b8b8;
+            --accent: #ffd700;
+            --on-accent: #0b0b0b;
+            --rule: #2c2c2c;
+            --measure: 44rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #ffffff;
+                --surface: #f6f3ea;
+                --text: #161616;
+                --muted: #474747;
+                --accent: #6b5000;
+                --on-accent: #ffffff;
+                --rule: #ddd8c8;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: 1.5rem;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -4rem;
+            padding: 0.75rem 1rem;
+            background: var(--accent);
+            color: var(--on-accent);
+            font-weight: 700;
+            border-radius: 0.375rem;
+            z-index: 10;
+        }
+
+        .skip-link:focus { top: 1rem; }
+
+        a {
+            color: var(--accent);
+            text-underline-offset: 0.18em;
+        }
+
+        a:hover { text-decoration-thickness: 2px; }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        .page {
+            max-width: var(--measure);
+            margin: 0 auto;
+            padding: 3rem 1rem 4rem;
+        }
+
+        header { margin-bottom: 2.5rem; }
+
+        .eyebrow {
+            margin: 0 0 0.5rem;
+            color: var(--accent);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(2rem, 6vw, 2.75rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem 1.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+
+        .meta strong { color: var(--text); font-weight: 600; }
+
+        .lead {
+            margin: 1.5rem 0 0;
+            font-size: 1.1875rem;
+        }
+
+        .summary {
+            margin: 0 0 2.5rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--surface);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .summary h2 {
+            margin: 0 0 0.5rem;
+            font-size: 1.1875rem;
+            border: 0;
+            padding: 0;
+        }
+
+        .summary ul { margin: 0; padding-left: 1.25rem; }
+        .summary li { margin: 0.375rem 0; }
+
+        nav[aria-labelledby="toc-title"] {
+            margin: 0 0 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        #toc-title {
+            margin: 0 0 0.75rem;
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 600;
+            border: 0;
+            padding: 0;
+        }
+
+        nav ol {
+            margin: 0;
+            padding-left: 1.5rem;
+            columns: 2 16rem;
+            column-gap: 2rem;
+        }
+
+        nav li { margin: 0.25rem 0; break-inside: avoid; }
+
+        section { margin: 0 0 2.75rem; }
+
+        h2 {
+            margin: 0 0 0.75rem;
+            padding-top: 0.25rem;
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        h3 {
+            margin: 1.75rem 0 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        p { margin: 0.75rem 0; }
+
+        ul { padding-left: 1.25rem; }
+        li { margin: 0.375rem 0; }
+
+        .permissions {
+            margin: 1.25rem 0 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .permissions div {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .permissions dt { font-weight: 700; }
+
+        .permissions dd { margin: 0.25rem 0 0; }
+
+        code {
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.875em;
+            color: var(--muted);
+            overflow-wrap: anywhere;
+        }
+
+        .note {
+            margin: 1.25rem 0;
+            padding: 1rem 1.25rem;
+            background: var(--surface);
+            border-radius: 0.5rem;
+        }
+
+        .contact {
+            display: grid;
+            gap: 0.25rem;
+            margin: 1rem 0 0;
+            padding: 1.25rem 1.5rem;
+            background: var(--surface);
+            border-radius: 0.5rem;
+            font-style: normal;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--rule);
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+
+        @media (min-width: 48rem) {
+            .page { padding-top: 4.5rem; }
+        }
+
+        @media print {
+            :root { --bg: #fff; --surface: #fff; --text: #000; --muted: #333; --accent: #000; --rule: #999; }
+            .skip-link, nav { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="page">
+    <header>
+        <p class="eyebrow">Netra Plus</p>
+        <h1>Privacy Policy</h1>
+        <ul class="meta">
+            <li><strong>Last updated:</strong> November 2026</li>
+            <li><strong>Developer:</strong> Netra Innovations</li>
+            <li><strong>App:</strong> Netra Plus – Accessible Smart Utilities</li>
+        </ul>
+        <p class="lead">
+            Netra Plus is built for blind and visually impaired people. This policy explains
+            what information the app uses, why it needs it, and how it is protected.
+        </p>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section class="summary" aria-labelledby="summary-title">
+            <h2 id="summary-title">In short</h2>
+            <ul>
+                <li>We do not sell your data or share it with anyone for marketing.</li>
+                <li>Your contacts and call details are processed on your phone and are never sent to our servers.</li>
+                <li>Each permission is used only by the feature that needs it, and only after you turn that feature on.</li>
+                <li>You can turn features off, withdraw permissions in Android settings, or ask us to delete your account data.</li>
+            </ul>
+        </section>
+
+        <nav aria-labelledby="toc-title">
+            <h2 id="toc-title">On this page</h2>
+            <ol>
+                <li><a href="#scope">Who this policy covers</a></li>
+                <li><a href="#collect">Information we collect</a></li>
+                <li><a href="#caller-announcer">Caller Announcer and your call information</a></li>
+                <li><a href="#sign-in">Google Sign-In and account data</a></li>
+                <li><a href="#payments">Subscriptions and payments</a></li>
+                <li><a href="#ads">Advertisements</a></li>
+                <li><a href="#permissions">Permissions we use</a></li>
+                <li><a href="#accessibility">Accessibility commitment</a></li>
+                <li><a href="#security">Data storage and security</a></li>
+                <li><a href="#children">Children's privacy</a></li>
+                <li><a href="#control">Your choices</a></li>
+                <li><a href="#changes">Changes to this policy</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ol>
+        </nav>
+
+        <section aria-labelledby="scope">
+            <h2 id="scope">1. Who this policy covers</h2>
+            <p>
+                This policy applies to every version of Netra Plus, including the Android app on
+                Google Play and the desktop software for Microsoft Windows.
+            </p>
+            <p>
+                Both versions use the internet to sync your data securely through Firebase Cloud
+                Firestore, including the 7-digit dynamic secret code used to connect the two.
+                The Windows app may ask for standard system permissions, such as the microphone or
+                storage, only to perform its features on your PC. Your personal files and screen
+                content are not shared or stored on our servers.
+            </p>
+        </section>
+
+        <section aria-labelledby="collect">
+            <h2 id="collect">2. Information we collect</h2>
+            <p>Netra Plus collects only what it needs to work:</p>
+            <ul>
+                <li>Basic app usage data, so features work as expected</li>
+                <li>Device information, such as your Android version</li>
+                <li>Account data, only if you choose to sign in with Google</li>
+            </ul>
+            <p>
+                We do <strong>not</strong> collect or store your name, phone number, address,
+                contacts, call history or private messages on our servers. A few features read
+                some of this information on your phone, only while you use them. Each one is
+                described below.
+            </p>
+            <p>
+                When you use an AI feature, such as Image Analyser or Netra AI, the photo or text you
+                choose is sent to Google Gemini only to get your answer. Google handles it under its
+                own <a href="https://policies.google.com/privacy">Privacy Policy</a>.
+            </p>
+        </section>
+
+        <section aria-labelledby="caller-announcer">
+            <h2 id="caller-announcer">3. Caller Announcer and your call information</h2>
+            <p>
+                Caller Announcer speaks the caller's name or number aloud while your phone rings,
+                because a blind user cannot read the incoming call screen. It is off until you turn
+                it on.
+            </p>
+
+            <h3>What it uses</h3>
+            <ul>
+                <li><strong>Phone state</strong> (<code>READ_PHONE_STATE</code>), to know when a call is ringing, answered or ended.</li>
+                <li><strong>Call log</strong> (<code>READ_CALL_LOG</code>), which Android requires before it gives an app the incoming caller's number.</li>
+                <li><strong>Contacts</strong> (<code>READ_CONTACTS</code>), to find the name saved for that number.</li>
+            </ul>
+
+            <h3>How it handles that information</h3>
+            <ul>
+                <li>The number is used on your phone only, to look up the name and speak it with text to speech.</li>
+                <li>Your call history, phone numbers and contacts are never stored by the app, uploaded to our servers or shared with anyone.</li>
+                <li>Announcements stop as soon as the call is answered, rejected or missed.</li>
+                <li>While announcing, the app may briefly lower your ringtone volume and then restore it.</li>
+            </ul>
+
+            <p>
+                You can turn Caller Announcer off at any time in the app, or remove these permissions
+                in Android <em>Settings › Apps › Netra Plus › Permissions</em>.
+            </p>
+        </section>
+
+        <section aria-labelledby="sign-in">
+            <h2 id="sign-in">4. Google Sign-In and account data</h2>
+            <p>If you sign in with Google, we receive a unique user ID from Google. We use it only to:</p>
+            <ul>
+                <li>Restore your app preferences</li>
+                <li>Keep your favorites and customization settings</li>
+                <li>Restore your ad-free subscription, if you have one</li>
+            </ul>
+            <p>We never access your Google password, emails or contacts.</p>
+        </section>
+
+        <section aria-labelledby="payments">
+            <h2 id="payments">5. Subscriptions and payments</h2>
+            <p>Netra Plus may offer an optional subscription that removes advertisements.</p>
+            <ul>
+                <li>All payments are handled by Google Play Billing.</li>
+                <li>We never see or store your payment details.</li>
+                <li>Your subscription status is checked only to turn ads on or off.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="ads">
+            <h2 id="ads">6. Advertisements</h2>
+            <p>Free users may see advertisements provided by Google AdMob.</p>
+            <ul>
+                <li>Ads may use device identifiers as described in Google's policies.</li>
+                <li>Netra Plus does not share your personal data with advertisers.</li>
+                <li>Subscribers see no ads.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="permissions">
+            <h2 id="permissions">7. Permissions we use</h2>
+            <p>
+                Netra Plus asks for a permission only when you use the feature that needs it.
+                You can withdraw any permission in Android settings.
+            </p>
+
+            <dl class="permissions">
+                <div>
+                    <dt>Camera</dt>
+                    <dd>For Talking Camera guidance, text reading, scanning and other vision features.</dd>
+                </div>
+                <div>
+                    <dt>Microphone</dt>
+                    <dd>For voice commands and other voice-based features.</dd>
+                </div>
+                <div>
+                    <dt>Phone, call log and contacts <code>READ_PHONE_STATE, READ_CALL_LOG, READ_CONTACTS</code></dt>
+                    <dd>Only for Caller Announcer, to speak who is calling. Processed on your phone and never stored or uploaded. See <a href="#caller-announcer">section 3</a>.</dd>
+                </div>
+                <div>
+                    <dt>All files access <code>MANAGE_EXTERNAL_STORAGE</code></dt>
+                    <dd>To manage, organize and delete your OCR results, PDF documents and audio recordings across your phone's storage.</dd>
+                </div>
+                <div>
+                    <dt>Internet</dt>
+                    <dd>For online features and ads.</dd>
+                </div>
+                <div>
+                    <dt>Accessibility service</dt>
+                    <dd>To support TalkBack and screen reader users.</dd>
+                </div>
+            </dl>
+
+            <div class="note">
+                <p>
+                    <strong>Why Netra Plus needs all files access.</strong>
+                    Netra File Manager is a core feature for our visually impaired users. It lets them
+                    manage, organize and delete OCR results, PDF documents and audio recordings anywhere
+                    on their phone, which standard scoped storage does not allow. All of this happens
+                    offline, on the device.
+                </p>
+            </div>
+        </section>
+
+        <section aria-labelledby="accessibility">
+            <h2 id="accessibility">8. Accessibility commitment</h2>
+            <p>Netra Plus is designed for accessibility first:</p>
+            <ul>
+                <li>Full TalkBack support</li>
+                <li>Voice announcements through text to speech</li>
+                <li>No important action that needs a gesture only</li>
+                <li>Clear spoken feedback for every action</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="security">
+            <h2 id="security">9. Data storage and security</h2>
+            <ul>
+                <li>Most data stays on your device.</li>
+                <li>Optional cloud data is stored securely with Google Firebase.</li>
+                <li>We do not sell or share your data with third parties.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="children">
+            <h2 id="children">10. Children's privacy</h2>
+            <p>
+                Netra Plus does not knowingly collect personal data from children under 13. If you
+                believe a child has given us personal data, please contact us and we will delete it.
+            </p>
+        </section>
+
+        <section aria-labelledby="control">
+            <h2 id="control">11. Your choices</h2>
+            <ul>
+                <li>Turn any feature off, or withdraw its permission in Android settings.</li>
+                <li>Remove your favorites and settings at any time.</li>
+                <li>Uninstall the app to remove all local data.</li>
+                <li>Email us to request deletion of your account data.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="changes">
+            <h2 id="changes">12. Changes to this policy</h2>
+            <p>
+                We may update this policy from time to time. Changes will appear on this page with a
+                new "Last updated" date.
+            </p>
+        </section>
+
+        <section aria-labelledby="contact">
+            <h2 id="contact">13. Contact us</h2>
+            <p>For questions or requests about this policy, contact us:</p>
+            <address class="contact">
+                <span><strong>Email:</strong> <a href="mailto:netraplushelpdesk@gmail.com">netraplushelpdesk@gmail.com</a></span>
+                <span><strong>Developer:</strong> Netra Innovations</span>
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Netra Plus. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
